@@ -8,16 +8,16 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -250.0
 const MAX_FALL_SPEED = 200
 
-const GRAVITY = 150
+const GRAVITY = 550
 
 
 func _physics_process(delta: float) -> void:
 	# Gravity.
 	if not is_on_floor():
 		if velocity.y > 0:
-			velocity.y += 2 * delta * GRAVITY * gravity_curve_descending.sample(velocity.y/MAX_FALL_SPEED)
+			velocity.y += 1.5 * delta * GRAVITY * gravity_curve_descending.sample(velocity.y/MAX_FALL_SPEED)
 		else:
-			velocity.y += GRAVITY * gravity_curve_ascending.sample(-velocity.y/MAX_FALL_SPEED)
+			velocity.y += GRAVITY * delta * gravity_curve_ascending.sample(-velocity.y/MAX_FALL_SPEED)
 		velocity.y = clampf(velocity.y, JUMP_VELOCITY, MAX_FALL_SPEED)
 
 	# Handle jump.
