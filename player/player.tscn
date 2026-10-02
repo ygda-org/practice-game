@@ -1,13 +1,23 @@
 [gd_scene format=3 uid="uid://c8sss6s46qi82"]
 
-[ext_resource type="Script" uid="uid://1sxgs34k5hjc" path="res://player.gd" id="1_rkbax"]
+[ext_resource type="Script" uid="uid://1sxgs34k5hjc" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_g1dw6"]
+
+[sub_resource type="Curve" id="Curve_rkbax"]
+_data = [Vector2(0, 0.5371901), 0.0, 0.5870887, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_g1dw6"]
+_data = [Vector2(0, 0.44628102), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.25929734, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D" unique_id=1312964779]
 script = ExtResource("1_rkbax")
+gravity_curve_ascending = SubResource("Curve_rkbax")
+gravity_curve_descending = SubResource("Curve_g1dw6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2095034776]
 texture = ExtResource("2_g1dw6")
