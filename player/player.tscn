@@ -12,7 +12,7 @@ _data = [Vector2(0, 0.5982144), 0.0, 0.85012305, 0, 0, Vector2(1, 1), 0.25929734
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(16, 16)
+size = Vector2(16, 30)
 
 [node name="Player" type="CharacterBody2D" unique_id=1312964779]
 script = ExtResource("1_rkbax")
@@ -22,9 +22,10 @@ gravity_curve_descending = SubResource("Curve_g1dw6")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2095034776]
 texture = ExtResource("2_g1dw6")
 region_enabled = true
-region_rect = Rect2(41.446037, 46.941643, 16, 16)
+region_rect = Rect2(41.446, 46.942, 16, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057419058]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1931586099]
