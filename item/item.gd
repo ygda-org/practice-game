@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body == Player:
+	if body is Player:
 		if name == "coin":
 			Gamestate.score += 1
 		if name == "health":

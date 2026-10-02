@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://gml50n8ngapb"]
 
+[ext_resource type="PackedScene" uid="uid://jnj8hfiyorpq" path="res://ui/hud.tscn" id="1_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://c8sss6s46qi82" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bw080eklrlaau" path="res://levels/level_1.tscn" id="2_xwkvk"]
 
@@ -11,6 +12,10 @@ offset_top = -654.0
 offset_right = 1433.0
 offset_bottom = 552.0
 color = Color(0.5516767, 0.8672654, 0.8831633, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1577082496]
+
+[node name="Hud" parent="CanvasLayer" unique_id=1221651901 instance=ExtResource("1_xwkvk")]
 
 [node name="Player" parent="." unique_id=1312964779 instance=ExtResource("2_pjrb6")]
 position = Vector2(22, -35)
