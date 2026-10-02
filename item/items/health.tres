@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BaseItem" format=3 uid="uid://iurbflbjw5jk"]
+
+[ext_resource type="Script" uid="uid://cks207jv57yar" path="res://item/base_item.gd" id="1_grs3t"]
+[ext_resource type="Texture2D" uid="uid://enrof46jxy77" path="res://assets/heart.png" id="2_2o3mq"]
+
+[resource]
+script = ExtResource("1_grs3t")
+sprite = ExtResource("2_2o3mq")
+item_name = "health"
+metadata/_custom_type_script = "uid://cks207jv57yar"
