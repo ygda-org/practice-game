@@ -10,6 +10,9 @@ const MAX_FALL_SPEED = 300
 
 const GRAVITY = 850
 
+const MAX_HEALTH : float = 20
+var health : float = 20
+
 
 func _physics_process(delta: float) -> void:
 	# Gravity.
