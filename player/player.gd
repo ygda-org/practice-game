@@ -24,7 +24,9 @@ func _physics_process(delta: float) -> void:
 		velocity.y = clampf(velocity.y, JUMP_VELOCITY, MAX_FALL_SPEED)
 
 	# Handle jump.
-	if Input.is_action_just_pressed("player_jump") and is_on_floor():
+	if is_on_floor():
+		$CoyoteTime.start()
+	if Input.is_action_just_pressed("player_jump") and not $CoyoteTime.is_stopped():
 		velocity.y = JUMP_VELOCITY
 	if Input.is_action_just_released("player_jump") and velocity.y < 0:
 		velocity.y /= 2.0
