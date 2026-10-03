@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://4xjl2qeytv8u" path="res://enemies/slime/slime.tscn" id="4_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://7vip86olsqyi" path="res://enemies/flying_slime/flying_slime.tscn" id="5_n46q3"]
 [ext_resource type="PackedScene" uid="uid://cgqw0756jkcks" path="res://levels/death_zone.tscn" id="6_btoec"]
+[ext_resource type="PackedScene" uid="uid://cov6jvep2dqy6" path="res://levels/flag.tscn" id="7_gwceb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_vn7o3")
@@ -81,13 +82,6 @@ item = ExtResource("3_kx6l7")
 position = Vector2(1264, -213)
 item = ExtResource("3_kx6l7")
 
-[node name="Label" type="Label" parent="." unique_id=1120144625]
-offset_left = 1672.0
-offset_top = -165.0
-offset_right = 1782.0
-offset_bottom = -142.0
-text = "end levle here"
-
 [node name="Slime" parent="." unique_id=44629250 instance=ExtResource("4_kx6l7")]
 position = Vector2(187, 16)
 
@@ -106,3 +100,14 @@ position = Vector2(1208, -24)
 [node name="DeathZone" parent="." unique_id=1456838857 instance=ExtResource("6_btoec")]
 position = Vector2(1535, 101)
 shape = SubResource("RectangleShape2D_ntid0")
+
+[node name="Flag" parent="." unique_id=611242079 instance=ExtResource("7_gwceb")]
+position = Vector2(1736, -112)
+
+[node name="Item5" parent="." unique_id=1541921544 instance=ExtResource("2_bt44k")]
+position = Vector2(1871, -207)
+item = ExtResource("3_kx6l7")
+
+[node name="Item6" parent="." unique_id=187224032 instance=ExtResource("2_bt44k")]
+position = Vector2(1936, -145)
+item = ExtResource("3_kx6l7")
