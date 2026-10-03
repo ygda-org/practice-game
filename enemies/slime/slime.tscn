@@ -34,6 +34,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57eei"]
 size = Vector2(16, 12)
 
+[sub_resource type="Curve" id="Curve_6326o"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.17174515, 1), 0.0, 0.0, 0, 0, Vector2(0.65927976, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [node name="Slime" type="CharacterBody2D" unique_id=44629250]
 script = ExtResource("1_6326o")
 
@@ -48,3 +52,20 @@ frame_progress = 0.1369277
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=453498275]
 position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_57eei")
+
+[node name="WalkParticles" type="CPUParticles2D" parent="." unique_id=1986423659]
+position = Vector2(0, 8)
+amount = 4
+lifetime = 0.3
+explosiveness = 0.3
+emission_shape = 3
+emission_rect_extents = Vector2(8, 1)
+direction = Vector2(0, -1)
+spread = 80.0
+gravity = Vector2(0, 30)
+initial_velocity_min = 12.0
+initial_velocity_max = 12.0
+scale_amount_min = 1.5
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_6326o")
+color = Color(0.765838, 0.4936607, 0.6833297, 1)
