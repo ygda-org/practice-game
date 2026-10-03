@@ -94,8 +94,9 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(9, 28)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kx6l7"]
+radius = 4.5
+height = 28.0
 
 [sub_resource type="Curve" id="Curve_yw30f"]
 _data = [Vector2(0, 0.16071439), 0.0, 8.145834, 0, 0, Vector2(0.21739131, 1), 0.0, 0.0, 0, 0, Vector2(0.6459627, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.41733846, 0.0, 0, 0]
@@ -108,12 +109,12 @@ gravity_curve_descending = SubResource("Curve_g1dw6")
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1041041404]
 sprite_frames = SubResource("SpriteFrames_oul6g")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057419058]
 position = Vector2(0.5, 2)
-shape = SubResource("RectangleShape2D_rkbax")
+shape = SubResource("CapsuleShape2D_kx6l7")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1931586099]
 zoom = Vector2(2, 2)
