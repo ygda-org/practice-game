@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://drk2eq0d80236" path="res://item/items/coin.tres" id="3_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://4xjl2qeytv8u" path="res://enemies/slime/slime.tscn" id="4_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://7vip86olsqyi" path="res://enemies/flying_slime/flying_slime.tscn" id="5_n46q3"]
+[ext_resource type="PackedScene" uid="uid://cgqw0756jkcks" path="res://levels/death_zone.tscn" id="6_btoec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_vn7o3")
@@ -55,6 +56,9 @@ texture = ExtResource("1_vn7o3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_jirdo")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntid0"]
+size = Vector2(300, 20)
+
 [node name="Level1" type="Node2D" unique_id=1014551410]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1600609338]
@@ -98,3 +102,7 @@ position = Vector2(835, -226)
 
 [node name="FlyingSlime2" parent="." unique_id=1816421763 instance=ExtResource("5_n46q3")]
 position = Vector2(1208, -24)
+
+[node name="DeathZone" parent="." unique_id=1456838857 instance=ExtResource("6_btoec")]
+position = Vector2(1535, 101)
+shape = SubResource("RectangleShape2D_ntid0")

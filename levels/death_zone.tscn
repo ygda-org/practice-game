@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cgqw0756jkcks"]
+
+[ext_resource type="Script" uid="uid://c1dg2dk8l58ia" path="res://levels/death_zone.gd" id="1_ntid0"]
+
+[node name="DeathZone" type="Area2D" unique_id=1456838857]
+script = ExtResource("1_ntid0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582537779]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
