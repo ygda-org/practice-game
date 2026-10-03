@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cif3b14vo4bue" path="res://enemies/enemy_component.gd" id="1_exhe8"]
 [ext_resource type="Theme" uid="uid://dfxppwosex7de" path="res://ui/ui_theme.tres" id="2_fqvkt"]
+[ext_resource type="AudioStream" uid="uid://lofqx5r38tud" path="res://assets/sfx/hit.mp3" id="3_mqocn"]
 
 [sub_resource type="Curve" id="Curve_fqvkt"]
 _data = [Vector2(0, 0.5351351), 0.0, 0.0, 0, 0, Vector2(0.24099723, 1), 0.0, 0.0, 0, 0, Vector2(0.3933518, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.594595, 0.0, 0, 0]
@@ -39,3 +40,7 @@ scale_amount_min = 2.0
 scale_amount_max = 3.0
 scale_amount_curve = SubResource("Curve_fqvkt")
 color = Color(0.91565555, 0.4236131, 0.7499004, 1)
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="." unique_id=2055356091]
+stream = ExtResource("3_mqocn")
+volume_db = -2.208

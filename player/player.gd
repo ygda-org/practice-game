@@ -27,6 +27,8 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("player_shoot"):
+		$ShootSFX.pitch_scale = randf_range(0.9, 1.1)
+		$ShootSFX.play()
 		var bullet : Bullet = BULLET.instantiate()
 		bullet.dir = self.global_position.direction_to(get_global_mouse_position())
 		bullet.global_position = self.global_position
@@ -45,6 +47,13 @@ func _physics_process(delta: float) -> void:
 			$Anim.play("run")
 		else:
 			$Anim.play("idle")
+	
+	if velocity.x and is_on_floor():
+		if not $RunSFX.playing:
+			$RunSFX.play()
+	else:
+		$RunSFX.stop()
+	
 	if velocity.x > 0:
 		$Anim.flip_h = false
 	elif velocity.x < 0:
@@ -54,6 +63,7 @@ func _physics_process(delta: float) -> void:
 		$CoyoteTime.start()
 		if in_air:
 			land_particles.emitting = true
+			$LandSFX.play(0.03)
 			target_scale = Vector2(2, 0.5)
 		in_air = false
 		$RunParticles.emitting = bool(velocity.x)
@@ -65,6 +75,7 @@ func _physics_process(delta: float) -> void:
 	if not $JumpBuffer.is_stopped() and not $CoyoteTime.is_stopped():
 		$JumpBuffer.stop()
 		velocity.y = JUMP_VELOCITY
+		$JumpSFX.play(0.14)
 		$JumpParticles.emitting = true
 		target_scale = Vector2(0.4, 1.5)
 	if Input.is_action_just_released("player_jump") and velocity.y < 0:

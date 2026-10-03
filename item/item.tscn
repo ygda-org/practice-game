@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dwo23ij5qusqy"]
 
 [ext_resource type="Script" uid="uid://c2mr2c0gxiu55" path="res://item/item.gd" id="1_4ojsc"]
+[ext_resource type="AudioStream" uid="uid://b852wgppxs762" path="res://assets/sfx/coin collect.mp3" id="2_6t40p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55d6i"]
 radius = 16.0
@@ -12,5 +13,9 @@ script = ExtResource("1_4ojsc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1712493665]
 shape = SubResource("CircleShape2D_55d6i")
+
+[node name="PickupSFX" type="AudioStreamPlayer" parent="." unique_id=1794472989]
+stream = ExtResource("2_6t40p")
+volume_db = -12.783
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

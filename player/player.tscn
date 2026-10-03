@@ -4,6 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://dn1asspau3ud8" path="res://assets/player/miku_idle.png" id="2_rkbax"]
 [ext_resource type="Texture2D" uid="uid://bimamq5grxeyk" path="res://assets/player/miku_fall_land.png" id="2_yw30f"]
 [ext_resource type="Texture2D" uid="uid://cakf7313ejmjx" path="res://assets/player/miku_run.png" id="3_g1dw6"]
+[ext_resource type="AudioStream" uid="uid://sxrew0kh0bri" path="res://assets/sfx/run.mp3" id="5_qjkh3"]
+[ext_resource type="AudioStream" uid="uid://clkxhgc4spk16" path="res://assets/sfx/jump.mp3" id="6_boad6"]
+[ext_resource type="AudioStream" uid="uid://bd0mkyqno203k" path="res://assets/sfx/shoot.mp3" id="7_rgyib"]
+[ext_resource type="AudioStream" uid="uid://bprfr0qxuo64l" path="res://assets/sfx/land.mp3" id="8_rgyib"]
 
 [sub_resource type="Curve" id="Curve_rkbax"]
 _data = [Vector2(0, 0.9732144), 0.0, -0.040293153, 0, 0, Vector2(1, 0.8392858), -0.1785715, 0.0, 0, 0]
@@ -160,3 +164,18 @@ initial_velocity_max = 10.0
 scale_amount_min = 1.5
 scale_amount_max = 2.5
 color = Color(0.38598248, 0.565487, 0.29890493, 1)
+
+[node name="RunSFX" type="AudioStreamPlayer" parent="." unique_id=677685018]
+stream = ExtResource("5_qjkh3")
+volume_db = -8.657
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="." unique_id=539815481]
+stream = ExtResource("6_boad6")
+
+[node name="ShootSFX" type="AudioStreamPlayer" parent="." unique_id=1608113609]
+stream = ExtResource("7_rgyib")
+volume_db = -12.0
+
+[node name="LandSFX" type="AudioStreamPlayer" parent="." unique_id=618855631]
+stream = ExtResource("8_rgyib")
+volume_db = -12.724

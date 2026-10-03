@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://jnj8hfiyorpq" path="res://ui/hud.tscn" id="1_xwkvk"]
 [ext_resource type="PackedScene" uid="uid://c8sss6s46qi82" path="res://player/player.tscn" id="2_pjrb6"]
 [ext_resource type="PackedScene" uid="uid://bw080eklrlaau" path="res://levels/level_1.tscn" id="2_xwkvk"]
+[ext_resource type="AudioStream" uid="uid://bq7uqjvuf51n0" path="res://assets/miku_music.mp3" id="4_c651c"]
 
 [node name="Main" type="Node2D" unique_id=1484550385]
 
@@ -21,3 +22,8 @@ color = Color(0.5516767, 0.8672654, 0.8831633, 1)
 position = Vector2(22, -35)
 
 [node name="Level1" parent="." unique_id=1014551410 instance=ExtResource("2_xwkvk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1434122606]
+stream = ExtResource("4_c651c")
+volume_db = -17.372
+autoplay = true

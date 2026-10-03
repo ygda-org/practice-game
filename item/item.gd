@@ -20,4 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 			Gamestate.increment_score(1)
 		if item.item_name == "health":
 			Gamestate.increment_health(1)
+		self.visible = false
+		$PickupSFX.play(0.2)
+		await $PickupSFX.finished
 		queue_free()

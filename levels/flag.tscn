@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cljnqbdmdrt88" path="res://levels/flag.gd" id="1_3yp7n"]
 [ext_resource type="Texture2D" uid="uid://b6433xq2bc8e4" path="res://assets/flag.png" id="2_v8sqi"]
+[ext_resource type="AudioStream" uid="uid://cliwod1n2htul" path="res://assets/sfx/flag_yay.mp3" id="3_v8sqi"]
+[ext_resource type="AudioStream" uid="uid://dradb6vt3jdya" path="res://assets/sfx/funny_flag_yay.mp3" id="4_75jjv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75jjv"]
 atlas = ExtResource("2_v8sqi")
@@ -91,5 +93,12 @@ scale_amount_min = 0.9
 scale_amount_max = 1.1
 scale_amount_curve = SubResource("Curve_377x3")
 color_initial_ramp = SubResource("Gradient_5fofi")
+
+[node name="SucessSFX" type="AudioStreamPlayer" parent="." unique_id=582902181]
+stream = ExtResource("3_v8sqi")
+
+[node name="FunnySFX" type="AudioStreamPlayer" parent="." unique_id=779992658]
+stream = ExtResource("4_75jjv")
+volume_db = -6.333
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -15,6 +15,8 @@ func increment_health(amount : float):
 	health += amount
 	$HitParticles.emitting = true
 	$HealthBar.value = health/max_health
+	if amount < 0:
+		$HitSFX.play()
 	if health <= 0:
 		var item : Item = ITEM.instantiate()
 		item.item = load("res://item/items/health.tres")
