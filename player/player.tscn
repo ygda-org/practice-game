@@ -33,10 +33,6 @@ region = Rect2(32, 0, 16, 32)
 atlas = ExtResource("2_rkbax")
 region = Rect2(0, 32, 16, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
-atlas = ExtResource("3_g1dw6")
-region = Rect2(0, 0, 16, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rgyib"]
 atlas = ExtResource("3_g1dw6")
 region = Rect2(16, 0, 16, 32)
@@ -48,6 +44,10 @@ region = Rect2(32, 0, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8t03j"]
 atlas = ExtResource("3_g1dw6")
 region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
+atlas = ExtResource("3_g1dw6")
+region = Rect2(0, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oul6g"]
 animations = [{
@@ -78,9 +78,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_boad6")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_rgyib")
 }, {
 "duration": 1.0,
@@ -88,6 +85,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8t03j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boad6")
 }],
 "loop": 1,
 "name": &"run",
@@ -108,7 +108,7 @@ gravity_curve_descending = SubResource("Curve_g1dw6")
 
 [node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1041041404]
 sprite_frames = SubResource("SpriteFrames_oul6g")
-animation = &"idle"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057419058]
