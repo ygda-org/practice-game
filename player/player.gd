@@ -29,8 +29,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y += GRAVITY * delta * gravity_curve_ascending.sample(-velocity.y/MAX_FALL_SPEED)
 		velocity.y = clampf(velocity.y, JUMP_VELOCITY, MAX_FALL_SPEED)
-		if velocity.y > 0:
-			$Anim.play("fall")
+		$Anim.play("fall")
 	else:
 		if velocity.x:
 			$Anim.play("run")
