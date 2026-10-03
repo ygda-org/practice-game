@@ -116,7 +116,7 @@ position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1931586099]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(2, 2)
 
 [node name="CoyoteTime" type="Timer" parent="." unique_id=82056098]
 wait_time = 0.17
