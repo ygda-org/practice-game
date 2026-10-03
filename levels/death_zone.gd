@@ -28,4 +28,4 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 func _on_body_entered(body):
 	if body is Player:
-		get_tree().change_scene_to_file("uid://gml50n8ngapb")
+		get_tree().call_deferred("change_scene_to_file", "uid://gml50n8ngapb")
