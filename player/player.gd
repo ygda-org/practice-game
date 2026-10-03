@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		$JumpBuffer.stop()
 		velocity.y = JUMP_VELOCITY
 		$JumpParticles.emitting = true
-		target_scale = Vector2(0.4, 1.5)
+		target_scale = Vector2(0.4, 1.9)
 	if Input.is_action_just_released("player_jump") and velocity.y < 0:
 		velocity.y /= 2.0
 
@@ -81,5 +81,5 @@ func _physics_process(delta: float) -> void:
 	$Anim.scale = $Anim.scale.lerp(target_scale, delta*25)
 	if $Anim.scale.distance_to(target_scale) < 0.1:
 		target_scale = Vector2(1,1)
-		$Anim.scale = Vector2(1,1)
+		#$Anim.scale = Vector2(1,1)
 	move_and_slide()
