@@ -7,8 +7,10 @@ const MAX_HEALTH : float = 10
 func _ready() -> void:
 	$HealthBar.value = health/MAX_HEALTH
 
+
 func increment_health(amount : float):
 	health += amount
 	$HealthBar.value = health/MAX_HEALTH
 	if health <= 0:
 		get_parent().queue_free()
+	

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c1v7u7gss8cae"]
+
+[ext_resource type="Script" uid="uid://cif3b14vo4bue" path="res://enemies/enemy_component.gd" id="1_exhe8"]
+[ext_resource type="Theme" uid="uid://dfxppwosex7de" path="res://ui/ui_theme.tres" id="2_fqvkt"]
+
+[node name="EnemyComponent" type="Node2D" unique_id=70122302]
+script = ExtResource("1_exhe8")
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1416084481]
+offset_left = -8.0
+offset_top = -17.0
+offset_right = 8.0
+offset_bottom = -13.0
+theme = ExtResource("2_fqvkt")
+max_value = 1.0
+value = 0.5
+show_percentage = false

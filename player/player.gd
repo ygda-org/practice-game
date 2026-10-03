@@ -21,14 +21,14 @@ var in_air: bool = false
 var target_scale: Vector2 = Vector2(1,1)
 
 func _ready():
+	Gamestate.player = self
 	add_child(land_particles)
 
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("player_shoot"):
 		var bullet : Bullet = BULLET.instantiate()
-		bullet.dir = get_viewport().get_mouse_position() - get_global_transform_with_canvas().get_origin()
-		bullet.dir = bullet.dir.normalized()
+		bullet.dir = self.global_position.direction_to(get_global_mouse_position())
 		bullet.global_position = self.global_position
 		get_parent().add_child(bullet)
 	

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://7vip86olsqyi"]
+
+[ext_resource type="Script" uid="uid://c51n6prnvd5e6" path="res://enemies/flying_slime/flying_slime.gd" id="1_56oxi"]
+[ext_resource type="PackedScene" uid="uid://c1v7u7gss8cae" path="res://enemies/enemy_component.tscn" id="1_d48tn"]
+[ext_resource type="Texture2D" uid="uid://cmnx6fun2wbfx" path="res://assets/enemies/slime_flying.png" id="2_56oxi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2hfc"]
+atlas = ExtResource("2_56oxi")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e01qf"]
+atlas = ExtResource("2_56oxi")
+region = Rect2(0, 16, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_55d6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2hfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e01qf")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fofi"]
+
+[node name="FlyingSlime" type="CharacterBody2D" unique_id=1969875359]
+script = ExtResource("1_56oxi")
+
+[node name="EnemyComponent" parent="." unique_id=70122302 instance=ExtResource("1_d48tn")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1817694826]
+sprite_frames = SubResource("SpriteFrames_55d6i")
+autoplay = "default"
+frame_progress = 0.7018276
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=700617387]
+shape = SubResource("CircleShape2D_5fofi")
+
+[node name="DirSwitch" type="Timer" parent="." unique_id=646857835]
+wait_time = 3.0
+autostart = true
