@@ -10,5 +10,5 @@ func _ready() -> void:
 func increment_health(amount : float):
 	health += amount
 	$HealthBar.value = health/MAX_HEALTH
-	if health < 0:
+	if health <= 0:
 		get_parent().queue_free()

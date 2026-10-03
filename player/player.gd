@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
+const BULLET = preload("uid://chntbp126ipio")
+
 @export var gravity_curve_ascending: Curve
 @export var gravity_curve_descending: Curve
 
@@ -22,6 +24,14 @@ func _ready():
 	add_child(land_particles)
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("player_shoot"):
+		var bullet : Bullet = BULLET.instantiate()
+		bullet.dir = get_viewport().get_mouse_position() - get_global_transform_with_canvas().get_origin()
+		bullet.dir = bullet.dir.normalized()
+		bullet.global_position = self.global_position
+		get_parent().add_child(bullet)
+	
 	# Gravity.
 	if not is_on_floor():
 		if velocity.y > 0:
@@ -71,4 +81,5 @@ func _physics_process(delta: float) -> void:
 	$Anim.scale = $Anim.scale.lerp(target_scale, delta*25)
 	if $Anim.scale.distance_to(target_scale) < 0.1:
 		target_scale = Vector2(1,1)
+		$Anim.scale = Vector2(1,1)
 	move_and_slide()
