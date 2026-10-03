@@ -21,9 +21,10 @@ Gamestate="*uid://8prwcykdcjrg"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [input]
 
