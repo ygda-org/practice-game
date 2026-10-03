@@ -47,7 +47,9 @@ func _physics_process(delta: float) -> void:
 			land_particles.emitting = true
 			target_scale = Vector2(2, 0.5)
 		in_air = false
+		$RunParticles.emitting = bool(velocity.x)
 	else:
+		$RunParticles.emitting = false
 		in_air = true
 	if Input.is_action_just_pressed("player_jump"):
 		$JumpBuffer.start()

@@ -145,3 +145,17 @@ color = Color(0.9006501, 0.915437, 0.88402283, 1)
 [node name="JumpBuffer" type="Timer" parent="." unique_id=692610354]
 wait_time = 0.1
 one_shot = true
+
+[node name="RunParticles" type="CPUParticles2D" parent="." unique_id=878894269]
+position = Vector2(0, 16)
+amount = 16
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+direction = Vector2(0, -1)
+spread = 60.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+scale_amount_min = 1.5
+scale_amount_max = 2.5
+color = Color(0.38598248, 0.565487, 0.29890493, 1)
