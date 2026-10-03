@@ -49,7 +49,10 @@ func _physics_process(delta: float) -> void:
 		in_air = false
 	else:
 		in_air = true
-	if Input.is_action_just_pressed("player_jump") and not $CoyoteTime.is_stopped():
+	if Input.is_action_just_pressed("player_jump"):
+		$JumpBuffer.start()
+	if not $JumpBuffer.is_stopped() and not $CoyoteTime.is_stopped():
+		$JumpBuffer.stop()
 		velocity.y = JUMP_VELOCITY
 		$JumpParticles.emitting = true
 		target_scale = Vector2(0.4, 1.5)
