@@ -13,6 +13,11 @@ const GRAVITY = 850
 const MAX_HEALTH : float = 20
 var health : float = 20
 
+var in_air: bool = false
+@onready var land_particles: CPUParticles2D = $JumpParticles.duplicate()
+
+func _ready():
+	add_child(land_particles)
 
 func _physics_process(delta: float) -> void:
 	# Gravity.
@@ -36,8 +41,14 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if is_on_floor():
 		$CoyoteTime.start()
+		if in_air:
+			land_particles.emitting = true
+		in_air = false
+	else:
+		in_air = true
 	if Input.is_action_just_pressed("player_jump") and not $CoyoteTime.is_stopped():
 		velocity.y = JUMP_VELOCITY
+		$JumpParticles.emitting = true
 	if Input.is_action_just_released("player_jump") and velocity.y < 0:
 		velocity.y /= 2.0
 
