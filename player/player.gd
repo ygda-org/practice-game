@@ -16,6 +16,8 @@ var health : float = 20
 var in_air: bool = false
 @onready var land_particles: CPUParticles2D = $JumpParticles.duplicate()
 
+var target_scale: Vector2 = Vector2(1,1)
+
 func _ready():
 	add_child(land_particles)
 
@@ -43,12 +45,14 @@ func _physics_process(delta: float) -> void:
 		$CoyoteTime.start()
 		if in_air:
 			land_particles.emitting = true
+			target_scale = Vector2(2, 0.5)
 		in_air = false
 	else:
 		in_air = true
 	if Input.is_action_just_pressed("player_jump") and not $CoyoteTime.is_stopped():
 		velocity.y = JUMP_VELOCITY
 		$JumpParticles.emitting = true
+		target_scale = Vector2(0.4, 1.5)
 	if Input.is_action_just_released("player_jump") and velocity.y < 0:
 		velocity.y /= 2.0
 
@@ -59,5 +63,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	$Anim.scale = $Anim.scale.lerp(target_scale, delta*25)
+	if $Anim.scale.distance_to(target_scale) < 0.1:
+		target_scale = Vector2(1,1)
 	move_and_slide()
