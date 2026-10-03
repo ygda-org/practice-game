@@ -10,6 +10,7 @@ func _ready() -> void:
 
 func increment_health(amount : float):
 	health += amount
+	$HitParticles.emitting = true
 	$HealthBar.value = health/MAX_HEALTH
 	if health <= 0:
 		get_parent().queue_free()
