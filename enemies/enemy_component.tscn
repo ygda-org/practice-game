@@ -43,4 +43,4 @@ color = Color(0.91565555, 0.4236131, 0.7499004, 1)
 
 [node name="HitSFX" type="AudioStreamPlayer" parent="." unique_id=2055356091]
 stream = ExtResource("3_mqocn")
-volume_db = -2.208
+volume_db = -12.027

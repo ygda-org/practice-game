@@ -11,7 +11,7 @@ func _ready() -> void:
 	$Sprite2D.texture = item.sprite
 
 func _physics_process(delta: float) -> void:
-	$Sprite2D.position.y = (sin(time_accum) * 2 - 1) * 2
+	$Sprite2D.position.y = sin(time_accum) * 4
 	time_accum += delta
 
 func _on_body_entered(body: Node2D) -> void:

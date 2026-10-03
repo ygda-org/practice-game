@@ -167,15 +167,16 @@ color = Color(0.38598248, 0.565487, 0.29890493, 1)
 
 [node name="RunSFX" type="AudioStreamPlayer" parent="." unique_id=677685018]
 stream = ExtResource("5_qjkh3")
-volume_db = -8.657
+volume_db = -21.656
 
 [node name="JumpSFX" type="AudioStreamPlayer" parent="." unique_id=539815481]
 stream = ExtResource("6_boad6")
+volume_db = -13.305
 
 [node name="ShootSFX" type="AudioStreamPlayer" parent="." unique_id=1608113609]
 stream = ExtResource("7_rgyib")
-volume_db = -12.0
+volume_db = -24.143
 
 [node name="LandSFX" type="AudioStreamPlayer" parent="." unique_id=618855631]
 stream = ExtResource("8_rgyib")
-volume_db = -12.724
+volume_db = -20.161
