@@ -66,7 +66,7 @@ func _physics_process(delta: float) -> void:
 		$JumpBuffer.stop()
 		velocity.y = JUMP_VELOCITY
 		$JumpParticles.emitting = true
-		target_scale = Vector2(0.4, 1.9)
+		target_scale = Vector2(0.4, 1.5)
 	if Input.is_action_just_released("player_jump") and velocity.y < 0:
 		velocity.y /= 2.0
 
