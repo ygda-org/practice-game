@@ -1,0 +1,42 @@
+[gd_resource type="Theme" format=3 uid="uid://dfxppwosex7de"]
+
+[sub_resource type="SystemFont" id="SystemFont_iuit4"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[sub_resource type="SystemFont" id="SystemFont_1eq05"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_546lt"]
+bg_color = Color(0.8500505, 0.85005057, 0.8500505, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1eq05"]
+bg_color = Color(0.26147652, 0.26147655, 0.2614764, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udl1o"]
+bg_color = Color(0.5921569, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[resource]
+Button/fonts/font = SubResource("SystemFont_iuit4")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 3
+Label/fonts/font = SubResource("SystemFont_1eq05")
+Panel/styles/panel = SubResource("StyleBoxFlat_546lt")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1eq05")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_udl1o")

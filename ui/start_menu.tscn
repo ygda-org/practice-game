@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://cqrbgppx33h37"]
 
+[ext_resource type="Theme" uid="uid://dfxppwosex7de" path="res://ui/ui_theme.tres" id="1_iuit4"]
 [ext_resource type="Script" uid="uid://h5is4mcojqir" path="res://ui/start_menu.gd" id="1_kw4xl"]
 
 [node name="StartMenu" type="Control" unique_id=652651996]
 layout_mode = 3
+anchors_preset = 0
 offset_right = 640.0
 offset_bottom = 360.0
+theme = ExtResource("1_iuit4")
 script = ExtResource("1_kw4xl")
 
 [node name="Button" type="Button" parent="." unique_id=1799768106]

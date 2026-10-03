@@ -1,22 +1,7 @@
 [gd_scene format=3 uid="uid://jnj8hfiyorpq"]
 
+[ext_resource type="Theme" uid="uid://dfxppwosex7de" path="res://ui/ui_theme.tres" id="1_276te"]
 [ext_resource type="Script" uid="uid://c0vwssu4fekvu" path="res://ui/hud.gd" id="1_rbyyf"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55d6i"]
-bg_color = Color(0.47, 0.47, 0.47, 0.74509805)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="LabelSettings" id="LabelSettings_55d6i"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fofi"]
-bg_color = Color(0.59064627, 0, 0, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
 
 [node name="Hud" type="Control" unique_id=1221651901]
 layout_mode = 3
@@ -25,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_276te")
 script = ExtResource("1_rbyyf")
 
 [node name="Background" type="Panel" parent="." unique_id=506037764]
@@ -37,7 +23,6 @@ offset_top = 12.0
 offset_right = 301.0
 offset_bottom = 56.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_55d6i")
 
 [node name="Score" type="Label" parent="Background" unique_id=1102031802]
 layout_mode = 1
@@ -50,7 +35,6 @@ offset_right = 51.0
 offset_bottom = 11.5
 grow_vertical = 2
 text = "SCORE: 0"
-label_settings = SubResource("LabelSettings_55d6i")
 
 [node name="HealthBar" type="ProgressBar" parent="Background" unique_id=1302567088]
 layout_mode = 1
@@ -65,7 +49,6 @@ offset_right = -10.0
 offset_bottom = 9.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/fill = SubResource("StyleBoxFlat_5fofi")
 max_value = 1.0
 value = 1.0
 show_percentage = false
