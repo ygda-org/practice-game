@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://c8sss6s46qi82"]
 
 [ext_resource type="Script" uid="uid://1sxgs34k5hjc" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://dn1asspau3ud8" path="res://assets/player/miku_idle.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://bimamq5grxeyk" path="res://assets/player/miku_fall_land.png" id="2_yw30f"]
+[ext_resource type="Texture2D" uid="uid://cakf7313ejmjx" path="res://assets/player/miku_run.png" id="3_g1dw6"]
 
 [sub_resource type="Curve" id="Curve_rkbax"]
 _data = [Vector2(0, 0.9732144), 0.0, -0.040293153, 0, 0, Vector2(1, 0.8392858), -0.1785715, 0.0, 0, 0]
@@ -11,24 +13,106 @@ point_count = 2
 _data = [Vector2(0, 0.5982144), 0.0, 0.85012305, 0, 0, Vector2(1, 1), 0.25929734, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ieo8"]
+atlas = ExtResource("2_yw30f")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1dw6"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw30f"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjkh3"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6k8r"]
+atlas = ExtResource("2_rkbax")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boad6"]
+atlas = ExtResource("3_g1dw6")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgyib"]
+atlas = ExtResource("3_g1dw6")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
+atlas = ExtResource("3_g1dw6")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8t03j"]
+atlas = ExtResource("3_g1dw6")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oul6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ieo8")
+}],
+"loop": 0,
+"name": &"fall",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1dw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yw30f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjkh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6k8r")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boad6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgyib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg6s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8t03j")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 4.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(16, 30)
+size = Vector2(9, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=1312964779]
 script = ExtResource("1_rkbax")
 gravity_curve_ascending = SubResource("Curve_rkbax")
 gravity_curve_descending = SubResource("Curve_g1dw6")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2095034776]
-texture = ExtResource("2_g1dw6")
-region_enabled = true
-region_rect = Rect2(41.446, 46.942, 16, 32)
+[node name="Anim" type="AnimatedSprite2D" parent="." unique_id=1041041404]
+sprite_frames = SubResource("SpriteFrames_oul6g")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1057419058]
-position = Vector2(0, 1)
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1931586099]
+zoom = Vector2(1.5, 1.5)
 
 [node name="CoyoteTime" type="Timer" parent="." unique_id=82056098]
 wait_time = 0.17

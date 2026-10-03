@@ -22,7 +22,17 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y += GRAVITY * delta * gravity_curve_ascending.sample(-velocity.y/MAX_FALL_SPEED)
 		velocity.y = clampf(velocity.y, JUMP_VELOCITY, MAX_FALL_SPEED)
-
+		if velocity.y > 0:
+			$Anim.play("fall")
+	else:
+		if velocity.x:
+			$Anim.play("run")
+		else:
+			$Anim.play("idle")
+	if velocity.x > 0:
+		$Anim.flip_h = false
+	elif velocity.x < 0:
+		$Anim.flip_h = true
 	# Handle jump.
 	if is_on_floor():
 		$CoyoteTime.start()
