@@ -36,7 +36,7 @@ script = ExtResource("1_56oxi")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1817694826]
 sprite_frames = SubResource("SpriteFrames_55d6i")
 autoplay = "default"
-frame_progress = 0.7018276
+frame_progress = 0.26135913
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=700617387]
 shape = SubResource("CircleShape2D_5fofi")
@@ -44,3 +44,5 @@ shape = SubResource("CircleShape2D_5fofi")
 [node name="DirSwitch" type="Timer" parent="." unique_id=646857835]
 wait_time = 3.0
 autostart = true
+
+[connection signal="timeout" from="DirSwitch" to="." method="_on_dir_switch_timeout"]

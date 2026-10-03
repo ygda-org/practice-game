@@ -5,7 +5,7 @@ const GRAVITY = 400
 const CONTACT_DAMAGE : float = -1.5
 
 var is_touching_wall : bool = false
-var dir : Vector2 = Vector2.LEFT
+var dir : Vector2 = Vector2.UP
 
 func _ready() -> void:
 	velocity = dir * SPEED
@@ -21,3 +21,8 @@ func _physics_process(delta: float) -> void:
 			Gamestate.increment_health(CONTACT_DAMAGE)
 	
 	move_and_slide()
+
+func _on_dir_switch_timeout() -> void:
+	dir *= -1
+	velocity = dir * SPEED
+	$DirSwitch.start()

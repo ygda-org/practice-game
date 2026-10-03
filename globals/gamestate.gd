@@ -11,4 +11,6 @@ func increment_score(amount : int):
 
 func increment_health(amount : float):
 	player.health += amount
+	if player.health <= 0:
+		get_tree().change_scene_to_file("res://main/main.tscn")
 	hud.health_bar.value = player.health/player.MAX_HEALTH

@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dwo23ij5qusqy" path="res://item/item.tscn" id="2_bt44k"]
 [ext_resource type="Resource" uid="uid://drk2eq0d80236" path="res://item/items/coin.tres" id="3_kx6l7"]
 [ext_resource type="PackedScene" uid="uid://4xjl2qeytv8u" path="res://enemies/slime/slime.tscn" id="4_kx6l7"]
+[ext_resource type="PackedScene" uid="uid://7vip86olsqyi" path="res://enemies/flying_slime/flying_slime.tscn" id="5_n46q3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jirdo"]
 texture = ExtResource("1_vn7o3")
@@ -84,4 +85,16 @@ offset_bottom = -142.0
 text = "end levle here"
 
 [node name="Slime" parent="." unique_id=44629250 instance=ExtResource("4_kx6l7")]
-position = Vector2(237, -74)
+position = Vector2(187, 16)
+
+[node name="Slime2" parent="." unique_id=1322617763 instance=ExtResource("4_kx6l7")]
+position = Vector2(739, -14)
+
+[node name="Slime3" parent="." unique_id=1731755885 instance=ExtResource("4_kx6l7")]
+position = Vector2(1050, -25)
+
+[node name="FlyingSlime" parent="." unique_id=1969875359 instance=ExtResource("5_n46q3")]
+position = Vector2(835, -226)
+
+[node name="FlyingSlime2" parent="." unique_id=1816421763 instance=ExtResource("5_n46q3")]
+position = Vector2(1208, -24)
